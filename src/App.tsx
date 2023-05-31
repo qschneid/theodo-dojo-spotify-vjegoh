@@ -22,8 +22,10 @@ const App = () => {
     queryKey: ['tracks'],
     queryFn: fetchTracks,
   });
+
   console.log(tracks);
   const nb_title = tracks?.length;
+  const first = tracks?.[0];
 
   return (
     <div className="App">
@@ -40,6 +42,7 @@ const App = () => {
       <button onClick={goToNextTrack}>Next track</button>
       <hr></hr>
       <p>Il y a {nb_title} titres dans la playliste</p>
+      <p>La première chanson est : {first?.track.name}</p>
     </div>
   );
 };
